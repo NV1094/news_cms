@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_pop_danmaku"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:autofillHints="@string/av_danmaku_et_hint"
+            android:background="@drawable/layer_right_input4"
+            android:hint="@string/av_danmaku_et_hint"
+            android:inputType="text"
+            android:maxLength="30"
+            android:paddingLeft="20dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/darkGray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_msc_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10pt"
+            android:background="@drawable/layer_right_input5"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_pop_danmaku">
+
+            <ImageView
+                android:id="@+id/iv_msc_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_mscrm"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_pop_danmaku"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_av_danmaku_btn_bg"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/av_danmaku_btn"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        tools:ignore="Suspicious0dp">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="弹幕字号:"-->
+    <!--            android:textColor="@color/white" />-->
+
+    <!--        <CheckBox-->
+    <!--            android:layout_width="32dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:background="@drawable/selector_textcolor2"-->
+    <!--            android:button="@null"-->
+    <!--            android:gravity="center"-->
+    <!--            android:paddingVertical="6dp"-->
+    <!--            android:tag="#FF7F00"-->
+    <!--            android:text="大"-->
+    <!--            android:textColor="@color/textcolor2" />-->
+
+    <!--        <CheckBox-->
+    <!--            android:layout_width="32dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:background="@drawable/selector_textcolor3"-->
+    <!--            android:button="@null"-->
+    <!--            android:gravity="center"-->
+    <!--            android:paddingVertical="6dp"-->
+    <!--            android:tag="#ff4444"-->
+    <!--            android:text="小"-->
+    <!--            android:textColor="@color/textcolor3" />-->
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        tools:ignore="Suspicious0dp">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="弹幕位置:"-->
+    <!--            android:textColor="@color/white" />-->
+    <!--        <CheckBox-->
+    <!--            android:layout_width="32dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:background="@drawable/selector_textcolor2"-->
+    <!--            android:button="@null"-->
+    <!--            android:gravity="center"-->
+    <!--            android:paddingVertical="6dp"-->
+    <!--            android:tag="#FF7F00"-->
+    <!--            android:text="上"-->
+    <!--            android:textColor="@color/textcolor2" />-->
+
+    <!--        <CheckBox-->
+    <!--            android:layout_width="32dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:background="@drawable/selector_textcolor3"-->
+    <!--            android:button="@null"-->
+    <!--            android:gravity="center"-->
+    <!--            android:paddingVertical="6dp"-->
+    <!--            android:tag="#ff4444"-->
+    <!--            android:text="中"-->
+    <!--            android:textColor="@color/textcolor3" />-->
+
+    <!--        <CheckBox-->
+    <!--            android:layout_width="32dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:background="@drawable/selector_textcolor4"-->
+    <!--            android:button="@null"-->
+    <!--            android:gravity="center"-->
+    <!--            android:paddingVertical="6dp"-->
+    <!--            android:tag="#0099cc"-->
+    <!--            android:text="下"-->
+    <!--            android:textColor="@color/textcolor4" />-->
+    <!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/textcolorgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        tools:ignore="Suspicious0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弹幕颜色:"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_1"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/selector_textcolor2"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:tag="#D900FF"
+            android:text="橙"
+            android:textColor="@color/textcolor2" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_2"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/selector_textcolor3"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:tag="#ff4444"
+            android:text="红"
+            android:textColor="@color/textcolor3" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_3"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/selector_textcolor4"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:tag="#0099cc"
+            android:text="蓝"
+            android:textColor="@color/textcolor4" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_4"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/selector_textcolor5"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:tag="#BA55D3"
+            android:text="紫"
+            android:textColor="@color/textcolor5" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_5"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/selector_textcolor6"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:tag="#32CD32"
+            android:text="绿"
+            android:textColor="@color/textcolor6" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_6"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/selector_textcolor7"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:tag="#FFC0CB"
+            android:text="粉"
+            android:textColor="@color/textcolor7" />
+    </LinearLayout>
+</LinearLayout>

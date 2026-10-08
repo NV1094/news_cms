@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eightbitlab.com.blurview.BlurView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+
+    android:background="@drawable/glass_panel_strong_bg"
+    android:clipToOutline="true">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_app_update" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        android:layout_marginTop="-40dp"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:minHeight="100dp"
+            android:textColor="@color/glass_text_primary"
+            android:textSize="@dimen/font_normal"
+            android:textStyle="bold"
+            tools:text="1.哈哈哈大空间和\n2.哈哈哈哈\n3.哈哈哈\n4.哈哈哈" />
+
+        <TextView
+            android:id="@+id/tvUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/glass_pill_bg"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingTop="8dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="8dp"
+            android:text="升级"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/glass_text_primary" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</eightbitlab.com.blurview.BlurView>

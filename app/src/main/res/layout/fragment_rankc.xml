@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_window_wash"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/iv_home_top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/ic_rank_top_bg3"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/dingwei"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginRight="64dp"
+                    android:layout_weight="1"
+                    android:scaleType="center" />
+
+                <ImageView
+                    android:id="@+id/app_my_sc_sch"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:background="@drawable/app_my_sc_sch"
+                    android:scaleType="matrix"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="@drawable/glass_pill_bg"
+                android:gravity="left|center">
+
+                <TextView
+                    android:id="@+id/hot_data_up_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:paddingStart="12dp"
+                    android:text="按实时热度排行最近更新12-28 19：32"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/rank_card_shuaxin"
+                    android:gravity="center"
+                    android:scaleType="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_rank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:tabBackground="@color/transparent"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/glass_accent"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@color/transparent"
+            app:tabSelectedTextColor="@color/glass_accent"
+            app:tabTextAppearance="@style/MyTabLayoutTextAppearanc3"
+            app:tabTextColor="@color/glass_text_secondary" />
+
+        <RelativeLayout
+            android:id="@+id/rl_day"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/glass_pill_bg">
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/iv_show"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="总榜"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/iv_show"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/icon_open" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/linear_Banners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_rank"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

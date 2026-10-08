@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_window_wash"
+    android:orientation="vertical"
+    tools:context=".ui.account.ChangeNicknameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/glass_panel_bg"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:id="@+id/rlBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="14dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_title_back2" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/change_nickname"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="@dimen/font_normal" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etNickname"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/glass_edittext_bg"
+        android:hint="请输入昵称"
+        android:paddingLeft="16dp"
+        android:paddingTop="12dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/glass_text_primary"
+        android:textColorHint="@color/glass_text_tertiary"
+        android:textSize="@dimen/font_small" />
+
+    <Button
+        android:id="@+id/tvFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/conBottom"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/glass_pill_bg"
+        android:backgroundTint="@color/glass_accent"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="@string/dialog_ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large" />
+
+</LinearLayout>

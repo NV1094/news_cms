@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/glass_card_bg"
+    android:padding="10dp"
+    android:layout_marginBottom="6dp">
+
+<!--    幻灯片背景-->
+    <ImageView
+        android:id="@+id/banner_backg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="@string/todo" />
+
+    <cn.lvdou.vod.banner.BlurBanner
+        android:id="@+id/item_banner"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:is_auto_play="true"
+        app:title_background="@android:color/transparent"
+        app:title_textsize="@dimen/font_normal" />
+
+    <cn.lvdou.vod.banner.BlurBanner
+        android:id="@+id/item_banners"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:is_auto_play="true"
+        app:title_background="@android:color/transparent"
+        app:title_textsize="@dimen/font_normal" />
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/ad_layouts"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center" />-->
+
+    <cn.lvdou.vod.ad.AdWebView
+        android:id="@+id/adWebView"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/banner_backg"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+</RelativeLayout>

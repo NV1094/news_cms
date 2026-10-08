@@ -1,0 +1,180 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+// apply plugin: 'kotlin-android-extensions' // Removed: no longer supported
+apply plugin: 'kotlin-kapt'
+// apply plugin: 'kotlin-android-extensions' // Removed: no longer supported
+
+android {
+    namespace 'cn.lvdou.vod'
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    signingConfigs {
+        debug {
+            // Use default debug keystore
+        }
+        release {
+            storeFile file('D:\\mykey\\lemetu2024.jks')
+            storePassword 'lemetu2024'
+            keyAlias = 'lemetu2024'
+            keyPassword 'lemetu2024'
+        }
+    }
+
+    defaultConfig {
+        applicationId "m.moxmi.top"
+        minSdk 30
+        versionCode 1
+        versionName '1.1.8'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //    ndk.abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a'
+        ndk.abiFilters "armeabi-v7a", 'arm64-v8a'
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            if (output.outputFileName != null && output.outputFileName.endsWith('.apk')) {
+                def fileName
+                fileName = "android_${variant.versionName}.apk"
+                output.outputFileName = fileName
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // signingConfig signingConfigs.release // Disabled: keystore not found
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // signingConfig signingConfigs.release // Disabled: keystore not found
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    packagingOptions {
+        exclude 'META-INF/beans.xml'
+    }
+    ndkVersion '27.0.12077973'
+}
+
+dependencies {
+    configurations.all {
+        exclude group: 'org.eclipse.jetty'
+        exclude group: 'org.eclipse.jetty.orbit'
+    }
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation files('libs\\Msc.jar')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.android.material:material:1.0.0'
+    //工具箱
+    implementation 'com.blankj:utilcodex:1.26.0'
+    //黄油刀
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.1'
+    //fragment
+    implementation 'me.yokeyword:fragmentationx:1.0.1'
+    implementation 'me.yokeyword:fragmentationx-swipeback:1.0.1'
+    implementation 'me.yokeyword:eventbus-activity-scope:1.1.0'
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    //recyclerView  不需要混淆
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    //recyclerView适配器
+    implementation 'me.drakeet.multitype:multitype:3.5.0'
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    //Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.1.0'
+    //下载  不需要混淆
+    kapt 'com.arialyy.aria:compiler:3.8.6'
+    //Glide  图片加载
+    implementation 'jp.wasabeef:glide-transformations:4.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    //Glide 走 OkHttp（接入 SmartDns DoH + http→https 防劫持，修复 WiFi 下图片不加载）
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.9.0'
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation project(path: ':newAv')
+    //图片选择
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.4'
+    implementation 'com.google.android:flexbox:1.1.0'
+    implementation "androidx.core:core-ktx:1.3.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    //BaseRecyclerViewAdapterHelper:lib自带混淆规则。用户不需要再手动配置混淆
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+    implementation 'org.litepal.android:kotlin:3.0.0'
+    //不需要混淆
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+    implementation 'com.hedgehog.ratingbar:app:1.1.2'//星星评价
+    implementation 'gdut.bsx:share2:0.9.3'
+    implementation 'com.github.SheHuan:NiceImageView:1.0.5'
+    implementation 'com.umeng.umsdk:common:9.4.4'// 友盟
+    implementation 'com.umeng.umsdk:asms:1.4.1'// 友盟
+    implementation 'org.xutils:xutils:3.8.5'//网络请求框架
+    //不需要混淆
+    implementation 'com.github.Dpuntu:android-downloader:v1.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'  //没有使用特殊Header，可以不加这行
+    implementation 'com.tencent.tbs.tbssdk:sdk:43697'
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+    //SP轻量级存储升级版 详情见https://github.com/Tencent/MMKV
+    implementation 'com.tencent:mmkv-static:1.2.5'
+    //不需要权限
+    implementation 'com.hjq:xxpermissions:6.2'
+    //权限请求框架
+    implementation 'com.hjq:toast:6.0'
+    implementation "com.orhanobut:hawk:2.0.1" //缓存数据
+    implementation project(path: ':m3u8library')
+    implementation 'commons-io:commons-io:2.8.0'
+    //投屏
+//    api(name: 'sdk-lecast-release', ext: 'aar')
+    implementation project(path: ':core')
+    // Cling library
+    implementation 'org.fourthline.cling:cling-core:2.1.1'
+    implementation 'org.fourthline.cling:cling-support:2.1.1'
+    //对话框
+    api 'com.lxj:xpopup:1.6.7'
+    implementation  'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+    implementation 'com.sunfusheng:marqueeview:1.3.3'
+    implementation files('libs/shiro-all-1.2.3.jar')
+    implementation files('libs/ssp_ad_content_sdk_v4.7.5.aar')
+    implementation "com.android.support:appcompat-v7:28"
+    implementation "com.android.support:recyclerview-v7:28"
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //毛玻璃 BlurView (JitPack: com.eightbitlab 组不在 Maven Central，改用官方仓库 com.github.Dimezis)
+    implementation 'com.github.Dimezis:BlurView:version-2.0.1'
+}
+

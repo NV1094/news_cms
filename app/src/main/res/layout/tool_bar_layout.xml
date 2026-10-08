@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eightbitlab.com.blurview.BlurView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:background="@drawable/glass_panel_bg"
+    android:clipToOutline="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="@android:color/transparent"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:id="@+id/backup"
+                android:layout_width="12dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginStart="@dimen/dp_10"
+                android:background="@drawable/ic_title_back2"
+                android:padding="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/center_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:layout_marginTop="55dp"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="18sp"
+                tools:text="查看全部" />
+
+            <FrameLayout
+                android:id="@+id/right_view"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</eightbitlab.com.blurview.BlurView>

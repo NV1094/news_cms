@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: me.yokeyword:eventbus-activity-scope:1.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b3cde828b188335ca22bdb1464a2696/jetified-eventbus-activity-scope-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b3cde828b188335ca22bdb1464a2696/jetified-eventbus-activity-scope-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b3cde828b188335ca22bdb1464a2696/jetified-eventbus-activity-scope-1.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.yokeyword/eventbus-activity-scope/1.1.0/de5a286eef8314ae8bc77993cda1f81ca91268ea/eventbus-activity-scope-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.yokeyword/eventbus-activity-scope/1.1.0/d1ad90ed2f4d8225df1cf74fe4e6e8537ee6ecc7/eventbus-activity-scope-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

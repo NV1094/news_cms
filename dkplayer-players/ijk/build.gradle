@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply from: '../../constants.gradle'
+
+android {
+    namespace 'com.dueeeke.videoplayer.ijk'
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly project(':dkplayer-java')
+   // api "tv.danmaku.ijk.media:ijkplayer-java:$project.ijkPlayerVersion"
+    //api 'com.shuyu:gsyVideoPlayer-java:8.1.1'
+    api project(':ijkplayer-java')
+    api project(':ijkplayer-x86')
+    api project(':ijkplayer-armv5')
+    api project(':ijkplayer-armv7a')
+
+//    api 'com.github.LongAgoLong.ijkplayer:ijkplayer-java:1.0.0'
+//    api 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-arm64:v8.1.1'
+//    api 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-armv7a:v8.1.1'
+//    api 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-x86:v8.1.1'
+//    api 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-x64:v8.1.1'
+//    api 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-base:v8.1.1'
+
+}
+
+ext {
+    releaseArtifact = 'player-ijk'
+}
+
+apply from: '../../publish.gradle'

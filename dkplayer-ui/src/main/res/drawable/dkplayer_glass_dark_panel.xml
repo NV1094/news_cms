@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平深色面板：播放器控制条/标题栏（原亮边折射 + 深色磨砂渐变 + 光泽带） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#B3000000" />
+    <corners android:radius="20dp" />
+</shape>

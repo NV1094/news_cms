@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.LuckSiege.PictureSelector:picture_library:v2.2.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/93d740b387287ca4b50344cbd7ff9f43/jetified-picture_library-v2.2.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/93d740b387287ca4b50344cbd7ff9f43/jetified-picture_library-v2.2.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/93d740b387287ca4b50344cbd7ff9f43/jetified-picture_library-v2.2.4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.LuckSiege.PictureSelector/picture_library/v2.2.4/4b0a59dd6ad9b9320f30030ca1e727c8a5dbea80/picture_library-v2.2.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

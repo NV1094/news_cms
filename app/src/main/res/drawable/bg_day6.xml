@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平：浅蓝纯色（原浅蓝→浅灰渐变） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#d6e4ff" />
+    <corners android:radius="0dp" />
+</shape>

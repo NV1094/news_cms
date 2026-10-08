@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hedgehog.ratingbar:app:1.1.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8ffe178923d9adfc220f8bcd5d44b40b/jetified-app-1.1.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8ffe178923d9adfc220f8bcd5d44b40b/jetified-app-1.1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8ffe178923d9adfc220f8bcd5d44b40b/jetified-app-1.1.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hedgehog.ratingbar/app/1.1.2/d8a5f253698c2bc85d1c806893573a3bd7f01c35/app-1.1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hedgehog.ratingbar/app/1.1.2/aa7529f2a9ec50ed3f4f7a54225a1e46557f4bb8/app-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

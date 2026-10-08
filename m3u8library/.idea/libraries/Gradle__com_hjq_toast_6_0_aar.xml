@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hjq:toast:6.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c11f10cf41516f301dd4ff9d1ebcda7/jetified-toast-6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c11f10cf41516f301dd4ff9d1ebcda7/jetified-toast-6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c11f10cf41516f301dd4ff9d1ebcda7/jetified-toast-6.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hjq/toast/6.0/902dc4fe15cbe28480dd554418743d88876a6d54/toast-6.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hjq/toast/6.0/f951889adf379008012a0f40fd35e7d0434df007/toast-6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

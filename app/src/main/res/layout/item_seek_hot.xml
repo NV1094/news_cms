@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/glass_pill_bg"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:layout_marginBottom="6dp">
+
+    <TextView
+        android:id="@+id/tvSort"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:background="@drawable/glass_pill_bg"
+        android:textColor="@color/glass_accent"
+        android:textSize="@dimen/font_small"
+        android:text="1">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center|start"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:singleLine="true"
+        android:textColor="@color/glass_text_secondary"
+        android:textSize="14sp"
+        tools:text="1.嘀嘀嘀滴滴" />
+</LinearLayout>

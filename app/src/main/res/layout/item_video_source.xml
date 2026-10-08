@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="24dp"
+    android:layout_marginEnd="6dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/glass_pill_bg"
+        android:gravity="center"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:textColor="@color/selector_video_source"
+        android:textSize="@dimen/font_normal"
+        tools:text=" "
+        tools:ignore="SpUsage" />
+
+    <cn.lvdou.vod.banner.AudioWaveView
+        android:id="@+id/lvdou_AudioWaveView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        tools:ignore="RtlHardcoded" />
+
+</FrameLayout>

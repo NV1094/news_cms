@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eightbitlab.com.blurview.BlurView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+
+    android:background="@drawable/glass_panel_strong_bg"
+    android:clipToOutline="true">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:gravity="center_horizontal"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我要评分"
+        android:textColor="@color/glass_text_primary"
+        android:textSize="@dimen/font_larger"
+        android:textStyle="bold"
+        />
+
+    <com.hedgehog.ratingbar.RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="23dp"
+        android:paddingLeft="18dp"
+        app:clickable="true"
+        app:halfstart="false"
+        app:starCount="5"
+        app:starEmpty="@drawable/ic_evalution_not_selected"
+        app:starFill="@drawable/ic_evalution_selected"
+        app:starImageHeight="40dp"
+        app:starImagePadding="15dp"
+        app:starImageWidth="40dp" />
+
+
+    <TextView
+        android:id="@+id/tvSubmit"
+        android:text="提交"
+        android:textColor="@color/glass_text_primary"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@drawable/glass_pill_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+</eightbitlab.com.blurview.BlurView>

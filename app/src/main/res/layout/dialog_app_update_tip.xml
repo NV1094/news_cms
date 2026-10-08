@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:weightSum="1.0">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <eightbitlab.com.blurview.BlurView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+
+            android:background="@drawable/glass_panel_strong_bg"
+            android:clipToOutline="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/update_ui_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="124dp"
+                android:gravity="center"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="22dp"
+                android:text="10.2.100 版本更新"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/update_ui_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/update_ui_text_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="9dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="新版绿豆已上线，尽享文娱体验吧"
+                android:textColor="@color/glass_text_secondary"
+                android:textSize="14dp" />
+
+            <View
+                android:id="@+id/update_ui_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/update_ui_text_content"
+                android:layout_marginTop="24dp"
+                android:background="#FFF5F5F5" />
+
+            <Button
+                android:id="@+id/update_ui_btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_below="@+id/update_ui_line"
+                android:layout_marginStart="53dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="53dp"
+                android:background="@drawable/glass_pill_bg"
+                android:gravity="center"
+                android:outlineProvider="none"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:text="立即升级"
+                android:textColor="@color/glass_text_primary" />
+
+            <RelativeLayout
+                android:id="@+id/update_ui_btn_ProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_below="@+id/update_ui_line"
+                android:layout_marginStart="53dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="53dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/download_pb"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:id="@+id/update_ui_ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:text="0%"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/update_ui_btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@+id/update_ui_btn_ProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="46dp"
+                android:background="@android:color/transparent"
+                android:text="暂不升级"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/update_ui_btn_cancel_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/update_ui_btn_cancel"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="46dp"
+                android:layout_toRightOf="@+id/update_ui_btn_cancel"
+                android:text=">"
+                android:textColor="@color/glass_text_primary" />
+
+            <TextView
+                android:id="@+id/update_ui_btn_close"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:text="x"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        </eightbitlab.com.blurview.BlurView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/update_dialog_new" />
+    </RelativeLayout>
+</LinearLayout>
+
+

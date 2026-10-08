@@ -1,0 +1,63 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.9.22'
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.12.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Removed: com.novoda:bintray-release - Bintray is deprecated
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+allprojects {
+    repositories {
+        maven {
+            url 'https://artifact.bytedance.com/repository/pangle'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'http://4thline.org/m2'
+            allowInsecureProtocol = true
+        }
+    }
+    allprojects{
+        repositories{
+            mavenCentral()
+        }
+    }
+}
+
+//统一 Java 编译级别为 17：消除 JDK 21 对 source/target 8 的过时警告（Kotlin 模块的 jvmTarget 已各自显式设为 17）
+subprojects {
+    afterEvaluate { p ->
+        if (p.plugins.hasPlugin('com.android.library') || p.plugins.hasPlugin('com.android.application')) {
+            p.android.compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_17
+                targetCompatibility = JavaVersion.VERSION_17
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

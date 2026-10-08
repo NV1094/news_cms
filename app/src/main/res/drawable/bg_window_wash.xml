@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平窗口底色：Google gray 50 纯色（原：Google 色阶渐变 + 蓝/绿/红彩色光晕已移除） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/wash_start" />
+</shape>

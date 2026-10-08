@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_tuijian"
+    android:background="@drawable/glass_card_bg"
+    android:padding="10dp"
+    android:layout_marginBottom="6dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="热门评论"
+            android:textColor="@color/glass_accent"
+            android:textSize="@dimen/font_small"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/glass_stroke" />
+
+        <LinearLayout
+            android:id="@+id/iv_liuyan_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingLeft="22dp"
+                android:paddingRight="22dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/glass_pill_bg"
+                    android:src="@drawable/ic_user_service" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="官方客服"
+                        android:textColor="@color/glass_text_primary"
+                        android:textSize="@dimen/font_small"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text=""
+                        android:textColor="@color/glass_text_secondary"
+                        android:textSize="@dimen/font_small"
+                        android:textStyle="bold"
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/liuyan_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="APP出现任何异常均可能是您使用了非最新版导致的！可前往http://v.lvdoui.cn下载最新版！，如遇浏览器禁止访问，可尝试更换其他浏览器下载，"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="@dimen/font_normal"
+                tools:ignore="SpUsage" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/glass_stroke" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

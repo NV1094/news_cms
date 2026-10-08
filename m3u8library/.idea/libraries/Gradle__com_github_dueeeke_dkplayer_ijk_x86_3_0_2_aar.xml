@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.dueeeke.dkplayer:ijk-x86:3.0.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6e6bb58c01d3df22a2a6742cfa31b176/jetified-ijk-x86-3.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6e6bb58c01d3df22a2a6742cfa31b176/jetified-ijk-x86-3.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6e6bb58c01d3df22a2a6742cfa31b176/jetified-ijk-x86-3.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dueeeke.dkplayer/ijk-x86/3.0.2/3c3d9dbeb4ced8dfbb67c601ec25ecf952f5726b/ijk-x86-3.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dueeeke.dkplayer/ijk-x86/3.0.2/3c3d9dbeb4ced8dfbb67c601ec25ecf952f5726b/ijk-x86-3.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

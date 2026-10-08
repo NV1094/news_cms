@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平：纯色（原同色渐变） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/dkplayer_background_color" />
+    <corners android:radius="30dip" />
+</shape>

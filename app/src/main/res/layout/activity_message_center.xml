@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_window_wash"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/glass_panel_bg"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_msg_center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:id="@+id/rlBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="14dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_title_back2" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/message_center"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view_msg_center"
+                    android:layout_width="40dp"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/glass_accent"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_system_notice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/system_notice"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view_system_notice"
+                    android:layout_width="40dp"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/glass_accent"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/linear_Banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:overScrollMode="never"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp" />
+
+</LinearLayout>

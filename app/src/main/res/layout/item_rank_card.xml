@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/total_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/dp_10"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/glass_card_bg"
+    android:padding="12dp">
+
+    <!--排行榜-->
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/error"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="52:70"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <ImageView
+        android:id="@+id/iv_tag"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:background="@drawable/icon_hot_list_sort_first_bg"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/iv_cover"
+        app:layout_constraintTop_toTopOf="@+id/iv_cover" />
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_tag"
+        app:layout_constraintEnd_toEndOf="@+id/iv_tag"
+        app:layout_constraintStart_toStartOf="@+id/iv_tag"
+        app:layout_constraintTop_toTopOf="@+id/iv_tag" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/dingwei"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_cover">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="王牌部队"
+            android:textColor="@color/glass_text_primary"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@drawable/ic_hots" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="999"
+            android:textColor="@color/glass_text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dingwei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@drawable/glass_pill_bg"
+        app:layout_constraintBottom_toTopOf="@+id/tv_desc"
+        app:layout_constraintStart_toEndOf="@+id/iv_cover"
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="电视剧/2021/剧情"
+            android:textColor="@color/glass_text_secondary"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_cover" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingEnd="6dp"
+            android:text="更新至24集/共38集"
+            android:textColor="@color/orangeRed"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="5dp"
+        android:maxLines="3"
+        android:singleLine="false"
+        android:text="一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事一个美好的爱情故事"
+        android:textColor="@color/glass_text_secondary"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_cover" />
+</androidx.constraintlayout.widget.ConstraintLayout>

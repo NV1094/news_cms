@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_window_wash"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/glass_panel_bg"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <RelativeLayout
+                android:id="@+id/rlBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="14dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_title_back2" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/projection"
+                android:textColor="@color/glass_text_primary"
+                android:textSize="@dimen/font_normal" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linTop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSelectWorks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:maxHeight="120dp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layout_constraintTop_toBottomOf="@+id/linHint" />
+
+            <LinearLayout
+                android:id="@+id/linHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/glass_pill_bg"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择投屏设备"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="@dimen/font_small" />
+
+                <TextView
+                    android:id="@+id/tvMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="搜索设备中..."
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="@dimen/font_small" />
+
+                <TextView
+                    android:id="@+id/tvUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="刷新"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="@dimen/font_small" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conProjection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvSelectWorks">
+
+                <TextView
+                    android:id="@+id/tvHint1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="15dp"
+                    android:text="如何搜索到我的电视设备"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHint2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="打开电视或机顶盒，确认手机与电视或机顶盒链接到同一个Wi-Fi"
+                    android:textColor="@color/glass_text_secondary"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/conImg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint2">
+
+                    <ImageView
+                        android:id="@+id/imgLeft1"
+                        android:layout_width="0dp"
+                        android:layout_height="180dp"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:src="@drawable/ic_tv_screen"
+                        app:layout_constraintHorizontal_weight="2.5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/imgcenter1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgcenter1"
+                        android:layout_width="0dp"
+                        android:layout_height="155dp"
+                        android:src="@drawable/ic_wifi_line"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgLeft1"
+                        app:layout_constraintHorizontal_weight="1.5"
+                        app:layout_constraintLeft_toRightOf="@+id/imgLeft1"
+                        app:layout_constraintRight_toLeftOf="@+id/imgright1"
+                        app:layout_constraintTop_toTopOf="@+id/imgLeft1" />
+
+                    <ImageView
+                        android:id="@+id/imgcenter2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/ic_wifi"
+                        app:layout_constraintLeft_toRightOf="@+id/imgLeft1"
+                        app:layout_constraintRight_toLeftOf="@+id/imgright1"
+                        app:layout_constraintTop_toTopOf="@+id/imgcenter1" />
+
+                    <ImageView
+                        android:id="@+id/imgright1"
+                        android:layout_width="0dp"
+                        android:layout_height="155dp"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:src="@drawable/ic_phone_screen"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgLeft1"
+                        app:layout_constraintHorizontal_weight="0.8"
+                        app:layout_constraintLeft_toRightOf="@+id/imgcenter1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imgLeft1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvHint3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="25dp"
+                    android:text="一键投屏 大屏享受"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/conImg1" />
+
+                <TextView
+                    android:id="@+id/tvHint4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="投屏功能，能将您当前的视频投射到电视播放，大屏播放更震撼"
+                    android:textColor="@color/glass_text_secondary"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint3" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/bg_film_screen"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint4" />
+
+                <ImageView
+                    android:id="@+id/imgButtom"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="145dp"
+                    android:src="@drawable/ic_rabbit_audience"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                <TextView
+                    android:id="@+id/tvHint33"
+                    app:layout_constraintTop_toBottomOf="@+id/imgButtom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/glass_text_secondary"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="投屏后，手机返回桌面或浏览器其他内容，不影响电视播放\n
+\n手机变身遥控，控制电视播放\n电视播放不消耗手机流量"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/tvHint44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="35dp"
+                    android:drawableLeft="@drawable/ic_wen"
+                    android:drawablePadding="5dp"
+                    android:text="仍然搜索不到我的电视设备"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint33" />
+
+                <TextView
+                    android:id="@+id/tvHint55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="15dp"
+                    android:text="方法一:"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint44" />
+
+                <TextView
+                    android:id="@+id/tvHint66"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="在电视应用商店：搜索LBTP，安装乐播投屏TV版并且打开（非智能电视，可加购智能机顶盒）"
+                    android:textColor="@color/glass_text_secondary"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint55" />
+
+                <TextView
+                    android:id="@+id/tvHint77"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="15dp"
+                    android:text="方法二:"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint66" />
+
+                <TextView
+                    android:id="@+id/tvHint88"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="将乐播投屏TV版下载并拷贝到U盘，再将U盘插入电视或机顶盒上安装
+                    \n注：如遇到投屏失败，亦可采用此方法，更新电视投屏功能"
+                    android:textColor="@color/glass_text_secondary"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint77" />
+
+                <View
+                    app:layout_constraintTop_toBottomOf="@+id/tvHint88"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

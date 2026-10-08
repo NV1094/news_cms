@@ -1,0 +1,12 @@
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.10.0'
+}
+include ':dkplayer-ui'
+include ':newAv'
+include ':core'
+include ':app',':m3u8library'
+include ':ijkplayer-armv7a',':ijkplayer-java',':ijkplayer-x86',':dkplayer-java'
+include ':dkplayer-players',':dkplayer-videocache',':ijkplayer-armv5'
+include ':dkplayer-players:exo'
+include ':dkplayer-players:ijk'
+rootProject.name='news_xtw'

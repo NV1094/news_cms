@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.play.NewPlayActivity">
+
+    <View
+        android:id="@+id/v_av_top_bg"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="@color/black"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/layoutAdv"
+        layout="@layout/layout_html_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/frameLayout"
+        app:layout_constraintRight_toRightOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+<!--    竖屏暂停广告-->
+    <cn.lvdou.vod.ad.AdWebView
+        android:id="@+id/stopdH"
+        android:layout_width="260dp"
+        android:layout_height="140dp"
+        android:scrollbars="none"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintLeft_toLeftOf="@+id/frameLayout"
+        app:layout_constraintRight_toRightOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+<!--    //竖屏暂停广告关闭-->
+    <ImageView
+        android:id="@+id/imgCloseStopAd"
+        android:layout_width="10dp"
+        android:visibility="gone"
+        android:layout_height="10dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@+id/stopdH"
+        android:src="@drawable/ic_close"
+        app:layout_constraintRight_toRightOf="@+id/stopdH"/>
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutAdv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

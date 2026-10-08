@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平：Google 橙黄纯色（原橙→粉渐变，原 solid 已被渐变覆盖一并清理） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FBBC05" />
+    <corners android:radius="5dp" />
+</shape>

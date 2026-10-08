@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_window_wash"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="166dp">
+<!--你好啊-->
+        <ImageView
+            android:id="@+id/iv_topic_banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/glass_panel_bg"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:id="@+id/back_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/glass_pill_bg"
+            android:orientation="horizontal"
+            android:paddingStart="11dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="14dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_title_back2" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/topic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:text=""
+            android:textColor="@color/glass_text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topic_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topic_name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="left|center_vertical"
+            android:text=""
+            android:textColor="@color/glass_text_secondary"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/top_line"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@android:color/transparent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topic_videolist_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

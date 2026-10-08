@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平：Google 蓝纯色（原同色渐变覆盖 solid，已移除渐变） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <size android:height="40dp" />
+    <solid android:color="#4285F4" />
+    <corners
+        android:bottomLeftRadius="120dp"
+        android:bottomRightRadius="120dp" />
+</shape>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平深色胶囊：播放器浮层按钮/图标衬底（原亮边折射 + 深色磨砂渐变） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#B3000000" />
+    <corners android:radius="100dp" />
+</shape>

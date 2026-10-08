@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平输入框：默认浅灰无描边 / 聚焦态浅蓝底 + 主色描边（焦点提示保留） -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:drawable="@drawable/glass_edittext_focused_bg" />
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_fill_end" />
+            <corners android:radius="@dimen/glass_radius_input" />
+        </shape>
+    </item>
+</selector>

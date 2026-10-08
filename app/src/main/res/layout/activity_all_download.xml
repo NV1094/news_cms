@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_window_wash">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.ui.AllDownloadActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/glass_panel_bg">
+
+                <RelativeLayout
+                    android:id="@+id/backups"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/iv"
+                        android:foreground="?selectableItemBackground"
+                        android:src="@drawable/ic_fanhui" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_screen_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="65dp"
+                    android:text="@string/cache"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="@dimen/font_larges" />
+
+                <TextView
+                    android:id="@+id/tvEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@string/iv"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="长按管理"
+                    android:background="@drawable/glass_pill_bg"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="7dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="7dp"
+                    android:textColor="@color/glass_text_primary"
+                    android:textSize="@dimen/font_normal"
+                    android:visibility="visible" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/linear_Banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/glass_accent"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/glass_accent"
+            app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+            app:tabTextColor="@color/glass_text_secondary" />
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/tab_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tablayout">
+
+        </androidx.viewpager.widget.ViewPager>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

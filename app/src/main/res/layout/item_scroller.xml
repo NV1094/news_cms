@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:background="@drawable/glass_card_bg"
+    android:padding="10dp"
+    android:layout_marginBottom="6dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/glass_pill_bg"
+        android:drawablePadding="15dp"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <ImageView
+            android:id="@+id/type_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_tv_top_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:gravity="center|start"
+            android:includeFontPadding="false"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:singleLine="true"
+            android:text="adad"
+            android:textColor="@color/glass_text_primary"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+    </LinearLayout>
+    <!--    首页下方广告-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/glass_stroke"/>
+
+    <cn.lvdou.vod.ad.AdWebView
+        android:id="@+id/adWebView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp" />
+
+</LinearLayout>

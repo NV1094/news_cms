@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平对话框面板：纯白表面，无描边（简洁化：去除多余边框） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/glass_fill_strong_start" />
+    <corners android:radius="22dp" />
+</shape>

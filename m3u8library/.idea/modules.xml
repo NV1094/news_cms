@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1564474075/app.iml" filepath="$PROJECT_DIR$/.idea/modules/1564474075/app.iml" group="vod/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1057911749/av.iml" filepath="$PROJECT_DIR$/.idea/modules/-1057911749/av.iml" group="vod/av" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1254114853/core.iml" filepath="$PROJECT_DIR$/.idea/modules/1254114853/core.iml" group="vod/core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/m3u8library.iml" filepath="$PROJECT_DIR$/.idea/modules/m3u8library.iml" group="vod/m3u8library" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-540528695/vod.iml" filepath="$PROJECT_DIR$/.idea/modules/-540528695/vod.iml" group="vod" />
+    </modules>
+  </component>
+</project>

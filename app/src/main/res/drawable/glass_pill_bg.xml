@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平胶囊（按钮/标签/图标衬底）：浅灰纯色，无描边无光泽 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/glass_fill_end" />
+    <corners android:radius="@dimen/glass_radius_pill" />
+</shape>

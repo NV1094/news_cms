@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 扁平：Google 蓝纯色装饰块（原蓝→青渐变光斑） -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="-280dp"
+        android:right="-280dp"
+        android:top="-100dp"
+        android:gravity="top">
+        <shape
+            android:shape="oval">
+            <solid android:color="#4285F4" />
+            <size
+                android:width="35dp"
+                android:height="300dp" />
+        </shape>
+    </item>
+</layer-list>
