@@ -178,7 +178,7 @@ public class StartActivity extends BaseActivity {
     //动态域名 API域名填写
     private void getApi() {
         OkHttpUtils.getInstance()
-                .getDataAsynFromNet(new String(Base64.decode("aHR0cHM6Ly90di42MHMuaWN1L21rZXkudHh0", Base64.DEFAULT)), new OkHttpUtils.MyNetCall() {
+                .getDataAsynFromNet(new String(Base64.decode("aHR0cHM6Ly9hcGkueG4tLTlpcXkwNGFuNmVudjlkLmNvbS9ta2V5MS50eHQ=", Base64.DEFAULT)), new OkHttpUtils.MyNetCall() {
 
                     @Override
                     public void success(Call call, Response response) throws IOException {
@@ -211,7 +211,7 @@ public class StartActivity extends BaseActivity {
     //动态域名 备用域名填写
     private void getApitwo() {
         OkHttpUtils.getInstance()
-                .getDataAsynFromNet(new String(Base64.decode("aHR0cHM6Ly90di42MHMuaWN1L21rZXkudHh0", Base64.DEFAULT)), new OkHttpUtils.MyNetCall() {
+                .getDataAsynFromNet(new String(Base64.decode("aHR0cHM6Ly9hcGkueG4tLTlpcXkwNGFuNmVudjlkLmNvbS9ta2V5MS50eHQ=", Base64.DEFAULT)), new OkHttpUtils.MyNetCall() {
 
                     @Override
                     public void success(Call call, Response response) throws IOException {
@@ -592,13 +592,9 @@ public class StartActivity extends BaseActivity {
             }
             MMkvUtils.Companion.Builds().saveTimeoutDATA(baseUrl); //保存启动成功的域名
         }
-        String PASSWD = MMkvUtils.Buildsx().loadAccount2();
-        if (PASSWD.length() != 0) {
-            ActivityUtils.startActivity(MainActivity.class);
-            finish(); //必须保留，不然没法退出程序
-        } else {
-            ActivityUtils.startActivity(LoginActivity.class);
-        }
+        //首次打开软件不显示登录页，直接进入首页；登录入口仍保留在“我的”页面
+        ActivityUtils.startActivity(MainActivity.class);
+        finish(); //必须保留，不然没法退出程序
     }
 
     @SuppressLint("NonConstantResourceId")

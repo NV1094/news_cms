@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: '../constants.gradle'
 android {
-    namespace 'tv.danmaku.ijk.media.player_x86'
+    namespace = 'tv.danmaku.ijk.media.player_x86'
     // http://tools.android.com/tech-docs/new-build-system/tips
     //noinspection GroovyAssignabilityCheck
     compileSdkVersion project.ext.compileSdkVersion
@@ -14,7 +14,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

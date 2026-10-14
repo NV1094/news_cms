@@ -232,6 +232,7 @@
             android:launchMode="singleTop" />
         <activity
             android:name=".ui.start.StartActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
@@ -266,5 +267,11 @@
                 android:resource="@xml/file_paths"
                 tools:replace="android:resource" />
         </provider>
+
+        <!-- utilcodex 库的此服务自带 intent-filter 但未声明 android:exported，
+             targetSdk 31+ 合并器强制要求显式声明；此处重声明补上属性（属性合并，不产生重复组件） -->
+        <service
+            android:name="com.blankj.utilcode.util.MessengerUtils$ServerService"
+            android:exported="false" />
     </application>
 </manifest>

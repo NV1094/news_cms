@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply from: '../constants.gradle'
 
 android {
-    namespace 'com.dueeeke.videocontroller'
+    namespace = 'com.dueeeke.videocontroller'
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
 

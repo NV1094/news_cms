@@ -42,7 +42,7 @@
 -keep public class * extends android.preference.Preference
 -keep public class * extends android.view.View
 -keep public class com.android.vending.licensing.ILicensingService
--keep class android.support.** {*;}
+# -keep class android.support.** {*;} 已移除：项目已全面使用 androidx，全量 keep 会阻止裁剪
 
 -keepclasseswithmembernames class * {
     native <methods>;
@@ -112,23 +112,14 @@
 
 -keep class com.tencent.** {*;}
 
-## v4
+## v4（项目已全面使用 androidx，旧 support 包依赖已删除）
 -dontwarn android.support.v4.**
--keep class android.support.v4.app.** { *; }
--keep interface android.support.v4.app.** { *; }
--keep class android.support.v4.** { *; }
 
-## v7
+## v7（项目已全面使用 androidx，旧 support 包依赖已删除）
 -dontwarn android.support.v7.**
--keep class android.support.v7.internal.** { *; }
--keep interface android.support.v7.internal.** { *; }
--keep class android.support.v7.** { *; }
 
-## design
+## design（项目已全面使用 androidx，旧 support 包依赖已删除）
 -dontwarn android.support.design.**
--keep class android.support.design.** { *; }
--keep interface android.support.design.** { *; }
--keep public class android.support.design.R$* { *; }
 
 ## recyclerview
 -keep class androidx.recyclerview.** {*;}
@@ -184,11 +175,18 @@
 
 ## retrofit
 -keep class retrofit2.** {*;}
-#-keepattributes Signature, InnerClasses, EnclosingMethod
-#-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
-#-keepclassmembers,allowshrinking,allowobfuscation interface * {
-#    @retrofit2.http.* <methods>;
-#}
+# ==== Retrofit 官方必需规则（R8 full mode 下禁止注释）====
+# AGP 8.x 默认 R8 full mode：只有被 keep 规则命中的类/方法才保留 Signature 属性。
+# 若接口方法泛型签名被剥离，返回类型退化为原始 Observable，
+# 运行时抛出 "Observable return type must be parameterized as Observable<Foo>"
+# （典型崩溃：StartActivity.onResume -> getStartBean）。
+-keepattributes Signature, InnerClasses, EnclosingMethod
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+# 兜底：业务网络接口整体保留（类/方法/泛型签名/注解均不混淆）
+-keep interface cn.lvdou.vod.netservice.** { *; }
 
 
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
@@ -377,9 +375,7 @@ public static final int *;
 }
 
 
-## fastjson
--dontwarn com.alibaba.fastjson.**
--keep class com.alibaba.fastjson.** { *; }
+## fastjson（依赖已删除，规则同步移除，避免误保留）
 -keepattributes Signature
 -keepattributes *Annotation*
 
@@ -399,7 +395,6 @@ public static final int *;
 #忽略警告
 -ignorewarnings
 ##保证是独立的jar,没有任何项目引用,如果不写就会认为我们所有的代码是无用的,从而把所有的代码压缩掉,导出一个空的jar
--dontshrink
 ###泛型
 -keepattributes Signature
 
@@ -419,7 +414,7 @@ public static final int *;
 # Optimization is turned off by default. Dex does not like code run
 # through the ProGuard optimize and preverify steps (and performs some
 # of these optimizations on its own).
--dontoptimize
+# -dontoptimize 已移除：启用 R8 代码优化/裁剪，减小包体与 dex 数量
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 # 表示不进行校验,这个校验作用 在java平台上的

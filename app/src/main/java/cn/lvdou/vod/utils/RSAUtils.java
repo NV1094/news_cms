@@ -1,6 +1,6 @@
 package cn.lvdou.vod.utils;
 
-import org.apache.shiro.codec.Base64;
+import android.util.Base64;
 import java.io.ByteArrayOutputStream;
 import java.security.Key;
 import java.security.KeyFactory;
@@ -134,7 +134,7 @@ public class RSAUtils {
      */
     public static String getPublicKey(Map<String, Object> keyMap) throws Exception {
         Key key = (Key) keyMap.get(PUBLIC_KEY);
-        return Base64.encodeToString(key.getEncoded());
+        return Base64.encodeToString(key.getEncoded(), Base64.NO_WRAP);
     }
 
     /**
@@ -145,7 +145,7 @@ public class RSAUtils {
      */
     public static String getPrivateKey(Map<String, Object> keyMap) throws Exception {
         Key key = (Key) keyMap.get(PRIVATE_KEY);
-        return Base64.encodeToString(key.getEncoded());
+        return Base64.encodeToString(key.getEncoded(), Base64.NO_WRAP);
     }
 
     /**
@@ -156,7 +156,7 @@ public class RSAUtils {
      * @throws Exception
      */
     public static String sign(String data, String privateKey) throws Exception {
-        byte[] keyBytes = Base64.decode(privateKey);
+        byte[] keyBytes = Base64.decode(privateKey, Base64.DEFAULT);
         PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
 
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -165,7 +165,7 @@ public class RSAUtils {
 
         signature.initSign(privateK);
         signature.update(data.getBytes(ENCODING));
-        return Base64.encodeToString(signature.sign());
+        return Base64.encodeToString(signature.sign(), Base64.NO_WRAP);
     }
 
     /**
@@ -178,7 +178,7 @@ public class RSAUtils {
      */
     public static boolean verifySign(String data, String publicKey, String sign) throws Exception {
         try {
-            byte[] keyBytes = Base64.decode(publicKey);
+            byte[] keyBytes = Base64.decode(publicKey, Base64.DEFAULT);
 
             X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
             KeyFactory keyFactory      = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -188,7 +188,7 @@ public class RSAUtils {
             signature.initVerify(publicK);
             signature.update(data.getBytes(ENCODING));
 
-            return signature.verify(Base64.decode(sign));
+            return signature.verify(Base64.decode(sign, Base64.DEFAULT));
         } catch (Exception e) {
             throw e;
         }
@@ -203,7 +203,7 @@ public class RSAUtils {
      */
     public static String encryptByPrivateKey(String dataStr, String privateKey) throws Exception {
         byte[] data     = dataStr.getBytes(ENCODING);
-        byte[] keyBytes = Base64.decode(privateKey);
+        byte[] keyBytes = Base64.decode(privateKey, Base64.DEFAULT);
 
         PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -229,7 +229,7 @@ public class RSAUtils {
         }
         byte[] encryptedData = out.toByteArray();
         out.close();
-        return Base64.encodeToString(encryptedData);
+        return Base64.encodeToString(encryptedData, Base64.NO_WRAP);
     }
 
     /**
@@ -240,8 +240,8 @@ public class RSAUtils {
      * @throws Exception
      */
     public static String decryptByPublicKey(String encryptedDataStr, String publicKey) throws Exception {
-        byte[] encryptedData = Base64.decode(encryptedDataStr);
-        byte[] keyBytes      = Base64.decode(publicKey);
+        byte[] encryptedData = Base64.decode(encryptedDataStr, Base64.DEFAULT);
+        byte[] keyBytes      = Base64.decode(publicKey, Base64.DEFAULT);
 
         X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -279,7 +279,7 @@ public class RSAUtils {
      */
     public static String encryptByPublicKey(String dataStr, String publicKey) throws Exception {
         byte[] data     = dataStr.getBytes(ENCODING);
-        byte[] keyBytes = Base64.decode(publicKey);
+        byte[] keyBytes = Base64.decode(publicKey, Base64.DEFAULT);
 
         X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -305,7 +305,7 @@ public class RSAUtils {
         }
         byte[] encryptedData = out.toByteArray();
         out.close();
-        return Base64.encodeToString(encryptedData);
+        return Base64.encodeToString(encryptedData, Base64.NO_WRAP);
     }
 
     /**
@@ -316,8 +316,8 @@ public class RSAUtils {
      * @throws Exception
      */
     public static String decryptByPrivateKey(String encryptedDataStr, String privateKey) throws Exception {
-        byte[] encryptedData = Base64.decode(encryptedDataStr);
-        byte[] keyBytes      = Base64.decode(privateKey);
+        byte[] encryptedData = Base64.decode(encryptedDataStr, Base64.DEFAULT);
+        byte[] keyBytes      = Base64.decode(privateKey, Base64.DEFAULT);
 
         PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);

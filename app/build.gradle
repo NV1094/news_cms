@@ -5,13 +5,13 @@ apply plugin: 'kotlin-kapt'
 // apply plugin: 'kotlin-android-extensions' // Removed: no longer supported
 
 android {
-    namespace 'cn.lvdou.vod'
+    namespace = 'cn.lvdou.vod'
 
     kotlinOptions {
         jvmTarget = '17'
     }
-    compileSdk 35
-    buildToolsVersion '35.0.0'
+    compileSdk = 35
+    buildToolsVersion = '35.0.0'
     signingConfigs {
         debug {
             // Use default debug keystore
@@ -26,12 +26,15 @@ android {
 
     defaultConfig {
         applicationId "m.moxmi.top"
-        minSdk 30
-        versionCode 1
-        versionName '1.1.8'
+        minSdk = 30
+        versionCode 1230
+        //只保留中文/英文资源，去除三方库自带的几十种语言 strings，减小包体
+        resourceConfigurations += ['zh', 'rCN', 'en']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     //    ndk.abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a'
         ndk.abiFilters "armeabi-v7a", 'arm64-v8a'
+        versionName '1.2.3'
+        targetSdk = 36
     }
 
     android.applicationVariants.all { variant ->
@@ -46,19 +49,21 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled = true
+            shrinkResources = true //移除未使用的资源文件
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            // signingConfig signingConfigs.release // Disabled: keystore not found
+            // 删除了误加的 applicationIdSuffix/versionNameSuffix kotlin_version：
+            // 会把 applicationId 变成 m.moxmi.top.1.9.22（非法包名），导致 AAPT 资源链接失败
+            signingConfig = signingConfigs.release
         }
         debug {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            // signingConfig signingConfigs.release // Disabled: keystore not found
         }
     }
 
     buildFeatures {
-        buildConfig true
+        buildConfig = true
     }
 
     compileOptions {
@@ -69,7 +74,7 @@ android {
     packagingOptions {
         exclude 'META-INF/beans.xml'
     }
-    ndkVersion '27.0.12077973'
+    ndkVersion = '27.0.12077973'
 }
 
 dependencies {
@@ -78,7 +83,7 @@ dependencies {
         exclude group: 'org.eclipse.jetty.orbit'
     }
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'], exclude: ['shiro-all-1.2.3.jar']) //shiro 仅用于 RSAUtils 的 Base64，已改用 android.util.Base64，排除出包
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -95,7 +100,7 @@ dependencies {
     implementation 'me.yokeyword:fragmentationx-swipeback:1.0.1'
     implementation 'me.yokeyword:eventbus-activity-scope:1.1.0'
     //EventBus
-    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'org.greenrobot:eventbus:3.3.1'
     //recyclerView  不需要混淆
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     //recyclerView适配器
@@ -140,13 +145,13 @@ dependencies {
     implementation 'org.xutils:xutils:3.8.5'//网络请求框架
     //不需要混淆
     implementation 'com.github.Dpuntu:android-downloader:v1.0.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+    //logging-interceptor:3.12.0 与 4.1.0 重复，已删除旧版
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     //1.0.5及以前版本的老用户升级需谨慎，API改动过大
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'  //没有使用特殊Header，可以不加这行
     implementation 'com.tencent.tbs.tbssdk:sdk:43697'
-    implementation 'com.alibaba:fastjson:1.1.70.android'
+    //fastjson 已确认代码中零引用，删除以减小包体
     //SP轻量级存储升级版 详情见https://github.com/Tencent/MMKV
     implementation 'com.tencent:mmkv-static:1.2.5'
     //不需要权限
@@ -166,13 +171,12 @@ dependencies {
     api 'com.lxj:xpopup:1.6.7'
     implementation  'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
     implementation 'com.sunfusheng:marqueeview:1.3.3'
-    implementation files('libs/shiro-all-1.2.3.jar')
+    //shiro-all-1.2.3.jar（约1.4MB）仅被 RSAUtils 用于 Base64，已改用 android.util.Base64 并删除
     implementation files('libs/ssp_ad_content_sdk_v4.7.5.aar')
-    implementation "com.android.support:appcompat-v7:28"
-    implementation "com.android.support:recyclerview-v7:28"
+    //com.android.support:appcompat-v7:28 与 androidx 重复，已删除
+    //com.android.support:recyclerview-v7:28 与 androidx 重复，已删除
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    //glide/kapt-glide 重复声明已删除
     implementation 'com.squareup.picasso:picasso:2.71828'
     //毛玻璃 BlurView (JitPack: com.eightbitlab 组不在 Maven Central，改用官方仓库 com.github.Dimezis)
     implementation 'com.github.Dimezis:BlurView:version-2.0.1'

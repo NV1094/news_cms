@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.1.8",
-      "outputFile": "android_1.1.8.apk"
+      "versionCode": 1230,
+      "versionName": "1.2.3",
+      "outputFile": "android_1.2.3.apk"
     }
   ],
   "elementType": "File",

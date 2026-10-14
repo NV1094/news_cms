@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply from: '../../constants.gradle'
 
 android {
-    namespace 'com.dueeeke.videoplayer.ijk'
+    namespace = 'com.dueeeke.videoplayer.ijk'
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
 

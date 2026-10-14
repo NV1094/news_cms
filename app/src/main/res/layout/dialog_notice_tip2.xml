@@ -17,19 +17,22 @@
     android:orientation="vertical"
     >
 
+    <!-- 公告标题区：使用 bg_new_notice.png（红色渐变+波浪）作为顶部装饰背景，
+         高度按图片比例（578x287 → 300dp宽约150dp高）避免拉伸 -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@drawable/glass_panel_bg">
+        android:layout_height="150dp"
+        android:background="@drawable/bg_new_notice">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="32dp"
             android:text="公告"
-            android:textColor="@color/glass_text_primary"
-            android:textSize="20dp" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

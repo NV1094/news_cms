@@ -2,14 +2,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 // apply plugin: 'kotlin-android-extensions' // Removed: no longer supported
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-    }
-}
+// jcenter 已关闭且 Gradle 9 移除 jcenter() API，此 buildscript 的插件从未被 apply，直接删除
+// buildscript {
+//     repositories {
+//         mavenCentral()
+//     }
+//     dependencies {
+//         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+//     }
+// }
 
 android {
     kotlinOptions {
@@ -19,7 +20,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    namespace 'jaygoo.library.m3u8downloader'
+    namespace = 'jaygoo.library.m3u8downloader'
     compileSdkVersion 30
 
     defaultConfig {
@@ -33,7 +34,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

@@ -1,15 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'tv.danmaku.ijk.media.player'
+    namespace = 'tv.danmaku.ijk.media.player'
     // http://tools.android.com/tech-docs/new-build-system/tips
     //noinspection GroovyAssignabilityCheck
     compileSdkVersion 30
     //noinspection GroovyAssignabilityCheck
 //    buildToolsVersion "25.0.3"
 
-    lintOptions {
-        abortOnError false
+    lint {
+        abortOnError = false
     }
     defaultConfig {
         minSdkVersion 22
@@ -17,7 +17,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
